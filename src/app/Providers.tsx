@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useState, useEffect, useMemo } from 'react'
+import { ReactNode } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { AntdRegistry } from '@ant-design/nextjs-registry'
 import { ConfigProvider, theme } from 'antd'
@@ -23,7 +23,7 @@ export default function Providers({ defaultTheme, children }: Props) {
 
 function AntDesignProvider({ defaultTheme, children }: Props) {
     const { defaultAlgorithm, darkAlgorithm } = theme
-    const { theme: currentTheme = defaultTheme, setTheme } = useTheme()
+    const { theme: currentTheme = defaultTheme } = useTheme()
 
     return (
         <ConfigProvider
